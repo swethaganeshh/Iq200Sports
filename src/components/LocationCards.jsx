@@ -80,5 +80,4 @@ const LocationCards = () => {
 
 export default LocationCards
 
-
 export default LocationCards
