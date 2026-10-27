@@ -1,0 +1,123 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,38,74,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(28,52,95,0.8);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.modal__close:hover {
+  background: var(--navy);
+  transform: rotate(90deg);
+}
+
+.modal__img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modal__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(28,52,95,0.8) 100%);
+}
+
+.modal__title {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-3);
+  color: var(--white);
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.modal__title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: var(--gold);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.modal__body {
+  padding: var(--space-3);
+}
+
+.modal__desc {
+  font-size: 1.02rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
+}
+
+.modal__note {
+  background: var(--light-bg);
+  border-left: 4px solid var(--gold);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.modal__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .modal__img-wrap {
+    height: 200px;
+  }
+  .modal__title {
+    font-size: 1.6rem;
+  }
+  .modal__actions .btn {
+    width: 100%;
+  }
+}
