@@ -155,6 +155,11 @@
   color: #25D366;
 }
 
+.contact-method--person .contact-method__icon {
+  background: rgba(249,181,46,0.15);
+  color: var(--gold);
+}
+
 /* Contact form */
 .contact-form-wrap {
   background: var(--white);

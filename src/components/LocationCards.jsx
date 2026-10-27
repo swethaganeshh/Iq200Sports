@@ -1,6 +1,6 @@
 import { MapPin, Clock, ArrowUpRight } from 'lucide-react'
 import { locations, contact } from '../config/contact.js'
-import { Phone, Mail, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MessageCircle, User } from 'lucide-react'
 import './LocationCards.css'
 
 const LocationCards = () => {
@@ -41,6 +41,15 @@ const LocationCards = () => {
 
       <div className="contact-methods">
         <h3>Contact Us Directly</h3>
+        {contact.contactPerson && (
+          <div className="contact-method contact-method--person">
+            <span className="contact-method__icon"><User size={20} /></span>
+            <div>
+              <strong>Contact Person</strong>
+              <span>{contact.contactPerson}</span>
+            </div>
+          </div>
+        )}
         <a href={`tel:${contact.phone}`} className="contact-method">
           <span className="contact-method__icon"><Phone size={20} /></span>
           <div>
@@ -68,5 +77,8 @@ const LocationCards = () => {
     </div>
   )
 }
+
+export default LocationCards
+
 
 export default LocationCards
