@@ -28,6 +28,19 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  width: fit-content;
+  max-width: 240px;
+  text-decoration: none;
+}
+
+.header__logo-image {
+  display: block;
+  width: 190px;
+  height: 64px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
 }
 
 /* Logo text styles */

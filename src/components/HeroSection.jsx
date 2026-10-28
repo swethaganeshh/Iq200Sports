@@ -37,8 +37,8 @@ const HeroSection = () => {
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-num">2</span>
-            <span className="hero__stat-label">Locations</span>
+            <span className="hero__stat-num">6</span>
+            <span className="hero__stat-label">Location</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">

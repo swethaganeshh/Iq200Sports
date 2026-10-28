@@ -41,15 +41,18 @@ const LocationCards = () => {
 
       <div className="contact-methods">
         <h3>Contact Us Directly</h3>
-        {contact.contactPerson && (
-          <div className="contact-method contact-method--person">
-            <span className="contact-method__icon"><User size={20} /></span>
-            <div>
-              <strong>Contact Person</strong>
-              <span>{contact.contactPerson}</span>
-            </div>
-          </div>
-        )}
+      {contact.contactPerson && (
+  <div className="contact-method contact-method--person">
+    <span className="contact-method__icon">
+      <User size={20} />
+    </span>
+    <div>
+      <strong>Academy Coach & Admin</strong>
+      <span>{contact.contactPerson}</span>
+      <small>{contact.contactRole}</small>
+    </div>
+  </div>
+)}
         <a href={`tel:${contact.phone}`} className="contact-method">
           <span className="contact-method__icon"><Phone size={20} /></span>
           <div>

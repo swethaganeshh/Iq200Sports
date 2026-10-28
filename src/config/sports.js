@@ -4,7 +4,7 @@ export const sports = [
     name: 'Football',
     short: 'Build agility, ball control, and teamwork on the field.',
     description:
-      'Football coaching at IQ200 focuses on fundamental skills — dribbling, passing, shooting, and positional play — alongside fitness and match awareness. Students learn to read the game, communicate on the field, and develop the stamina required for competitive play.',
+      'Football coaching at IQ200 focuses on fundamental skills  dribbling, passing, shooting, and positional play  alongside fitness and match awareness. Students learn to read the game, communicate on the field, and develop the stamina required for competitive play.',
     image: 'https://images.pexels.com/photos/32266276/pexels-photo-32266276.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'Soccer player in mid-motion on a grassy field during training.',
   },

@@ -1,1 +1,48 @@
-/* LocationCards styles are included in ContactSection.css */
+
+/* Contact person details */
+.contact-method--person > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.contact-method--person > div > strong {
+  display: block;
+  color: #aebbd0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-method--person > div > span {
+  display: block;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.contact-method--person > div > small {
+  display: block;
+  color: #c5d0e2;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.contact-method--person > div > span {
+  display: block;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.contact-method--person > div > small {
+  display: block;
+  color: #E66A01 !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 5px;
+}

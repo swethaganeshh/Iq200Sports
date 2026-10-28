@@ -30,7 +30,7 @@ const Footer = () => {
               <Mail size={16} /> {contact.email}
             </a>
             <div className="footer__contact-item">
-              <MapPin size={16} /> Chennai &amp; Ooty
+              <MapPin size={16} /> Chennai 
             </div>
           </div>
         </div>

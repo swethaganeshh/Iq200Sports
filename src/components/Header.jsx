@@ -19,9 +19,18 @@ const Header = () => {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__bar">
         <div className="container header__inner">
-          <a href="#home" className="header__logo" onClick={closeMenu} aria-label="IQ200 Sports Academy home">
-            <Logo size={42} />
-          </a>
+          <a
+  href="#home"
+  className="header__logo"
+  onClick={closeMenu}
+  aria-label="IQ200 Sports Academy home"
+>
+  <img
+    src="/1q200.png"
+    alt="IQ200 Sports Academy"
+    className="header__logo-image"
+  />
+</a>
 
           <nav className="header__nav" aria-label="Main navigation">
             <ul>

@@ -13,7 +13,8 @@ const ContactForm = () => {
     message: '',
   })
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | success | error
+ const [status, setStatus] = useState('idle')
+// idle | submitting | success | error
 
   const validate = () => {
     const newErrors = {}
@@ -37,19 +38,52 @@ const ContactForm = () => {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const newErrors = validate()
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
-      setStatus('error')
-      return
-    }
+  const handleSubmit = async (e) => {
+  e.preventDefault()
 
-    // No backend is connected yet. Show a clear setup message.
-    setStatus('success')
-    setForm({ name: '', phone: '', sport: '', location: '', message: '' })
+  const newErrors = validate()
+
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors)
+    setStatus('error')
+    return
   }
+
+  setStatus('submitting')
+
+  try {
+    const response = await fetch('https://formspree.io/f/xbgggvrg', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.name,
+        phone: form.phone,
+        sport: form.sport,
+        location: form.location,
+        message: form.message,
+      }),
+    })
+
+    if (response.ok) {
+      setStatus('success')
+      setErrors({})
+      setForm({
+        name: '',
+        phone: '',
+        sport: '',
+        location: '',
+        message: '',
+      })
+    } else {
+      setStatus('error')
+    }
+  } catch (error) {
+    setStatus('error')
+  }
+}
 
   return (
     <div className="contact-form-wrap">
@@ -64,9 +98,7 @@ const ContactForm = () => {
           <div>
             <strong>Thank you for your enquiry!</strong>
             <p>
-              Your message has been prepared. A form-handling service is not yet connected, so this
-              enquiry has not been sent or stored. Please contact us directly via phone or WhatsApp
-              until the form is fully connected, or check back soon.
+              We have received your message and will respond as soon as possible. 
             </p>
           </div>
         </div>
@@ -163,9 +195,14 @@ const ContactForm = () => {
           {errors.message && <span className="field-error">{errors.message}</span>}
         </div>
 
-        <button type="submit" className="btn btn--gold btn--lg contact-form__submit">
-          Send Enquiry <Send size={18} />
-        </button>
+        <button
+  type="submit"
+  className="btn btn--gold btn--lg contact-form__submit"
+  disabled={status === 'submitting'}
+>
+  {status === 'submitting' ? 'Sending...' : 'Send Enquiry'}
+  <Send size={18} />
+</button>
       </form>
     </div>
   )

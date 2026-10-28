@@ -21,7 +21,7 @@ const TestimonialSection = () => {
             <article key={item.id} className="testimonial-card">
               {item.placeholder && (
                 <div className="testimonial-card__badge">
-                  <Info size={14} /> Sample
+                  {/* <Info size={14} /> Sample */}
                 </div>
               )}
               <Quote className="testimonial-card__quote-icon" size={40} />

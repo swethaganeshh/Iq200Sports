@@ -37,10 +37,7 @@ const GalleryGrid = () => {
           ))}
         </div>
 
-        <p className="gallery__note">
-          These are temporary sports images. Real academy photos can be added by replacing the
-          image entries in the gallery configuration file.
-        </p>
+        
       </div>
 
       {lightboxIndex !== null && (

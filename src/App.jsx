@@ -9,6 +9,7 @@ import TestimonialSection from './components/TestimonialSection.jsx'
 import FAQAccordion from './components/FAQAccordion.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
+import Tournaments from './components/tournaments.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <TrainingJourney />
         <GalleryGrid />
         <TestimonialSection />
+        <Tournaments />
         <FAQAccordion />
         <ContactSection />
       </main>
